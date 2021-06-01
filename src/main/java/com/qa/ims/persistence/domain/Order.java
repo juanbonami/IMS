@@ -27,6 +27,9 @@ public class Order {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "id:" + orderId + " customer number:" + customerId;
+	}
 
 }
