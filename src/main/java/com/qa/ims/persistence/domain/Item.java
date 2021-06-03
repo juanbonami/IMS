@@ -4,9 +4,9 @@ public class Item {
 	
 	private long itemId;
 	private String itemName;
-	private int value;
+	private long value;
 	
-	public Item(long itemId, String itemName, int value) {
+	public Item(long itemId, String itemName, long value) {
 		this.setItemId(itemId);
 		this.setItemName(itemName);
 		this.setValue(value);
@@ -28,11 +28,11 @@ public class Item {
 		this.itemName = itemName;
 	}
 	
-	public int getValue() {
+	public long getValue() {
 		return value;
 	}
 	
-	public void setValue(int value) {
+	public void setValue(long value) {
 		this.value = value;
 	}
 	
