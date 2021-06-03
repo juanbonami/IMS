@@ -13,9 +13,15 @@ import com.qa.ims.utils.Utils;
 public class ItemController implements CrudController<Item> {
 	
 	public static final Logger LOGGER = LogManager.getLogger();
+	
 	private ItemDAO itemDao;
 	private Utils utils;
 
+	public ItemController(ItemDAO itemDao, Utils utils) {
+		super();
+		this.itemDao = itemDao;
+		this.utils = utils;
+	}
 
 	@Override
 	public List<Item> readAll() {
