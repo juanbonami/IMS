@@ -36,6 +36,10 @@ public class Item {
 		this.value = value;
 	}
 	
+	@Override
+	public String toString() {
+		return "id: " + itemId + " name: " + itemName + " value: " + value;
+	}
 	
 	
 }
