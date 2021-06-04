@@ -11,30 +11,23 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.qa.ims.persistence.domain.Order;
+import com.qa.ims.persistence.domain.Item;
 import com.qa.ims.utils.DBUtils;
 
-public class OrderDAO implements Dao<Order> {
+public class ItemDAO implements Dao<Item> {
 	
 	public static final Logger LOGGER = LogManager.getLogger();
-	
-	@Override
-	public Order modelFromResultSet(ResultSet resultSet) throws SQLException {
-		Long orderId = resultSet.getLong("order_id");
-		Long customerId = resultSet.getLong("customer_id");
-		return new Order(orderId, customerId);
-	}
 
 	@Override
-	public List<Order> readAll() {
+	public List<Item> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders");) {
-			List<Order> orders = new ArrayList<>();
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM items");) {
+			List<Item> items = new ArrayList<>();
 			while (resultSet.next()) {
-				orders.add(modelFromResultSet(resultSet));
+				items.add(modelFromResultSet(resultSet));
 			}
-			return orders;
+			return items;
 		} catch (SQLException e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -43,9 +36,9 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order read(Long id) {
+	public Item read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM orders WHERE order_id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("SELECT * FROM items WHERE item_id = ?");) {
 			statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
@@ -59,12 +52,13 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order create(Order order) {
+	public Item create(Item item) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO orders(order_id, customer_id) VALUES (?, ?)");) {
-			statement.setLong(1, order.getOrderId());
-			statement.setLong(2, order.getCustomerId());
+						.prepareStatement("INSERT INTO items(item_id, item_name, value) VALUES (?, ?, ?)");) {
+			statement.setLong(1, item.getItemId());
+			statement.setString(2, item.getItemName());
+			statement.setLong(3, item.getValue());
 			statement.executeUpdate();
 			//return readLatest();
 		} catch (Exception e) {
@@ -75,14 +69,15 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order update(Order order) {
+	public Item update(Item item) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE orders SET customer_id = ? WHERE order_id = ?");) {
-			statement.setLong(1, order.getCustomerId());
-			statement.setLong(2, order.getOrderId());
+						.prepareStatement("UPDATE items SET item_name = ?, value = ? WHERE item_id = ?");) {
+			statement.setString(1, item.getItemName());
+			statement.setLong(2, item.getValue());
+			statement.setLong(3, item.getItemId());
 			statement.executeUpdate();
-			return read(order.getOrderId());
+			return read(item.getItemId());
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -93,7 +88,7 @@ public class OrderDAO implements Dao<Order> {
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM orders WHERE order_id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("DELETE FROM items WHERE item_id = ?");) {
 			statement.setLong(1, id);
 			return statement.executeUpdate();
 		} catch (Exception e) {
@@ -102,5 +97,15 @@ public class OrderDAO implements Dao<Order> {
 		}
 		return 0;
 	}
+
+	@Override
+	public Item modelFromResultSet(ResultSet resultSet) throws SQLException {
+		Long itemId = resultSet.getLong("item_id");
+		String itemName = resultSet.getString("item_name");
+		int value = resultSet.getInt("value");
+		return new Item(itemId, itemName, value);
+	}
+	
+	
 
 }

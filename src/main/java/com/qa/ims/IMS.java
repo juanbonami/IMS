@@ -6,9 +6,11 @@ import org.apache.logging.log4j.Logger;
 import com.qa.ims.controller.Action;
 import com.qa.ims.controller.CrudController;
 import com.qa.ims.controller.CustomerController;
+import com.qa.ims.controller.ItemController;
 import com.qa.ims.controller.OrderController;
 import com.qa.ims.controller.OrderProductController;
 import com.qa.ims.persistence.dao.CustomerDAO;
+import com.qa.ims.persistence.dao.ItemDAO;
 import com.qa.ims.persistence.dao.OrderDAO;
 import com.qa.ims.persistence.dao.OrderProductDAO;
 import com.qa.ims.persistence.domain.Domain;
@@ -21,6 +23,7 @@ public class IMS {
 
 	private final CustomerController customers;
 	private final OrderController orders;
+	private final ItemController items;
 	private final OrderProductController orderProducts;
 	private final Utils utils;
 
@@ -28,9 +31,12 @@ public class IMS {
 		this.utils = new Utils();
 		final CustomerDAO custDAO = new CustomerDAO();
 		final OrderDAO orderDAO = new OrderDAO();
-		final OrderProductDAO orderProductDao = new OrderProductDAO();
+		final ItemDAO itemDAO = new ItemDAO();
+    final OrderProductDAO orderProductDao = new OrderProductDAO();
+    
 		this.customers = new CustomerController(custDAO, utils);
 		this.orders = new OrderController(orderDAO, utils);
+		this.items = new ItemController(itemDAO, utils);
 		this.orderProducts = new OrderProductController(orderProductDao, utils);
 	}
 
@@ -60,6 +66,7 @@ public class IMS {
 				active = this.customers;
 				break;
 			case ITEM:
+				active = this.items;
 				break;
 			case ORDER:
 				active = this.orders;
