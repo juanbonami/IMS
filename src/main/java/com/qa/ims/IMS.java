@@ -6,9 +6,13 @@ import org.apache.logging.log4j.Logger;
 import com.qa.ims.controller.Action;
 import com.qa.ims.controller.CrudController;
 import com.qa.ims.controller.CustomerController;
+import com.qa.ims.controller.ItemController;
 import com.qa.ims.controller.OrderController;
+import com.qa.ims.controller.OrderProductController;
 import com.qa.ims.persistence.dao.CustomerDAO;
+import com.qa.ims.persistence.dao.ItemDAO;
 import com.qa.ims.persistence.dao.OrderDAO;
+import com.qa.ims.persistence.dao.OrderProductDAO;
 import com.qa.ims.persistence.domain.Domain;
 import com.qa.ims.utils.DBUtils;
 import com.qa.ims.utils.Utils;
@@ -19,14 +23,21 @@ public class IMS {
 
 	private final CustomerController customers;
 	private final OrderController orders;
+	private final ItemController items;
+	private final OrderProductController orderProducts;
 	private final Utils utils;
 
 	public IMS() {
 		this.utils = new Utils();
 		final CustomerDAO custDAO = new CustomerDAO();
 		final OrderDAO orderDAO = new OrderDAO();
+		final ItemDAO itemDAO = new ItemDAO();
+    final OrderProductDAO orderProductDao = new OrderProductDAO();
+    
 		this.customers = new CustomerController(custDAO, utils);
 		this.orders = new OrderController(orderDAO, utils);
+		this.items = new ItemController(itemDAO, utils);
+		this.orderProducts = new OrderProductController(orderProductDao, utils);
 	}
 
 	public void imsSystem() {
@@ -55,9 +66,13 @@ public class IMS {
 				active = this.customers;
 				break;
 			case ITEM:
+				active = this.items;
 				break;
 			case ORDER:
 				active = this.orders;
+				break;
+			case ADD:
+				active = this.orderProducts;
 				break;
 			case STOP:
 				return;
@@ -65,7 +80,7 @@ public class IMS {
 				break;
 			}
 
-			LOGGER.info(() ->"What would you like to do with " + domain.name().toLowerCase() + ":");
+			LOGGER.info(() ->"\nWhat would you like to do with " + domain.name().toLowerCase() + ":");
 
 			Action.printActions();
 			Action action = Action.getAction(utils);
@@ -85,6 +100,9 @@ public class IMS {
 			break;
 		case READ:
 			crudController.readAll();
+			break;
+		case ADD:
+			crudController.create();
 			break;
 		case UPDATE:
 			crudController.update();

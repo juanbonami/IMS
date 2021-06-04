@@ -9,7 +9,7 @@ public interface Dao<T> {
 	List<T> readAll();
 	
 	T read(Long id);
-
+	
 	T create(T t);
 
 	T update(T t);
