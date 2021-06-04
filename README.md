@@ -36,6 +36,7 @@ End with an example of getting some data out of the system or using it for a lit
 ## UML Diagram
 
 ![UML](IMS/UML-IMS.png)
+<img src="IMS/UML-IMS.png">UML</img>
 
 ## Running the tests
 
