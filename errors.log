@@ -1,175 +1,26 @@
-20210604 01:02:25 INFO  [main] ims.IMS IMS.java44 - Welcome to the Inventory Management System!
-20210604 01:02:25 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
-20210604 01:02:25 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
-20210604 01:02:25 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
-20210604 01:02:25 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
-20210604 01:02:25 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
-20210604 01:02:25 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
-20210604 01:02:31 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with customer:
-20210604 01:02:31 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:02:31 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:02:31 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:02:31 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:02:31 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:02:32 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:02:39 INFO  [main] controller.CustomerController CustomerController.java36 - id:5 first name:juan surname:bonami
-20210604 01:02:39 INFO  [main] controller.CustomerController CustomerController.java36 - id:6 first name:jon surname:doe
-20210604 01:02:39 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with customer:
-20210604 01:02:39 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:02:39 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:02:39 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:02:39 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:02:39 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:02:39 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:02:49 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
-20210604 01:02:49 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
-20210604 01:02:49 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
-20210604 01:02:49 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
-20210604 01:02:49 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
-20210604 01:02:49 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
-20210604 01:03:03 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with order:
-20210604 01:03:03 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:03:03 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:03:03 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:03:03 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:03:03 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:03:03 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:03:07 INFO  [main] controller.OrderController OrderController.java31 - id:1 customer number:5
-20210604 01:03:07 INFO  [main] controller.OrderController OrderController.java31 - id:2 customer number:6
-20210604 01:03:07 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with order:
-20210604 01:03:07 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:03:07 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:03:07 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:03:07 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:03:07 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:03:07 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:03:28 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
-20210604 01:03:28 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
-20210604 01:03:28 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
-20210604 01:03:28 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
-20210604 01:03:28 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
-20210604 01:03:28 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
-20210604 01:03:33 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with item:
-20210604 01:03:33 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:03:33 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:03:33 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:03:33 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:03:33 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:03:33 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:03:35 INFO  [main] controller.ItemController ItemController.java29 - id: 100 name: rubber-duck value: 20
-20210604 01:03:35 INFO  [main] controller.ItemController ItemController.java29 - id: 150 name: eggplant value: 15
-20210604 01:03:35 INFO  [main] controller.ItemController ItemController.java29 - id: 200 name: pencil value: 15
-20210604 01:03:35 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with item:
-20210604 01:03:35 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:03:35 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:03:35 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:03:35 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:03:35 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:03:35 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:04:17 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
-20210604 01:04:17 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
-20210604 01:04:17 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
-20210604 01:04:17 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
-20210604 01:04:17 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
-20210604 01:04:17 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
-20210604 01:05:31 INFO  [main] ims.IMS IMS.java83 - 
+20210604 01:37:24 INFO  [main] ims.IMS IMS.java44 - Welcome to the Inventory Management System!
+20210604 01:37:24 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
+20210604 01:37:24 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
+20210604 01:37:24 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
+20210604 01:37:24 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
+20210604 01:37:24 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
+20210604 01:37:24 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
+20210604 01:37:27 INFO  [main] ims.IMS IMS.java83 - 
 What would you like to do with add:
-20210604 01:05:31 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:05:31 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:05:31 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:05:31 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:05:31 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:05:31 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:06:42 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 1 item-id: 150
-20210604 01:06:42 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 2 item-id: 150
-20210604 01:06:42 INFO  [main] ims.IMS IMS.java83 - 
+20210604 01:37:27 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
+20210604 01:37:27 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
+20210604 01:37:27 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
+20210604 01:37:27 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
+20210604 01:37:27 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
+20210604 01:37:27 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
+20210604 01:37:30 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 1 item-id: 150
+20210604 01:37:30 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 2 item-id: 150
+20210604 01:37:30 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 2 item-id: 100
+20210604 01:37:30 INFO  [main] ims.IMS IMS.java83 - 
 What would you like to do with add:
-20210604 01:06:42 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:06:42 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:06:42 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:06:42 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:06:42 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:06:42 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:07:15 INFO  [main] controller.OrderProductController OrderProductController.java36 - Please enter order id
-20210604 01:07:24 INFO  [main] controller.OrderProductController OrderProductController.java38 - Please enter the item id
-20210604 01:07:30 INFO  [main] controller.OrderProductController OrderProductController.java41 - Item added!
-20210604 01:07:30 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with add:
-20210604 01:07:30 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:07:30 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:07:30 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:07:30 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:07:30 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:07:30 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:07:34 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 1 item-id: 150
-20210604 01:07:34 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 2 item-id: 150
-20210604 01:07:34 INFO  [main] controller.OrderProductController OrderProductController.java29 - order-id: 2 item-id: 100
-20210604 01:07:34 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with add:
-20210604 01:07:34 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:07:34 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:07:34 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:07:34 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:07:34 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:07:34 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:07:51 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
-20210604 01:07:51 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
-20210604 01:07:51 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
-20210604 01:07:51 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
-20210604 01:07:51 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
-20210604 01:07:51 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
-20210604 01:08:03 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with order:
-20210604 01:08:03 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:08:03 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:08:03 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:08:03 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:08:03 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:08:03 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:08:05 INFO  [main] controller.OrderController OrderController.java31 - id:1 customer number:5
-20210604 01:08:05 INFO  [main] controller.OrderController OrderController.java31 - id:2 customer number:6
-20210604 01:08:05 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with order:
-20210604 01:08:05 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:08:05 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:08:05 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:08:05 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:08:05 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:08:05 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:08:17 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
-20210604 01:08:17 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
-20210604 01:08:17 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
-20210604 01:08:17 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
-20210604 01:08:17 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
-20210604 01:08:17 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
-20210604 01:08:20 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with customer:
-20210604 01:08:20 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:08:20 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:08:20 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:08:20 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:08:20 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:08:20 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:08:24 INFO  [main] controller.CustomerController CustomerController.java36 - id:5 first name:juan surname:bonami
-20210604 01:08:24 INFO  [main] controller.CustomerController CustomerController.java36 - id:6 first name:jon surname:doe
-20210604 01:08:24 INFO  [main] ims.IMS IMS.java83 - 
-What would you like to do with customer:
-20210604 01:08:24 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
-20210604 01:08:24 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
-20210604 01:08:24 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
-20210604 01:08:24 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
-20210604 01:08:24 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
-20210604 01:08:24 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
-20210604 01:09:04 INFO  [main] ims.IMS IMS.java49 - Which entity would you like to use?
-20210604 01:09:04 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
-20210604 01:09:04 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
-20210604 01:09:04 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
-20210604 01:09:04 INFO  [main] domain.Domain Domain.java27 - ADD: Add item to order
-20210604 01:09:04 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
-20210604 01:09:09 INFO  [main] ims.Runner Runner.java13 - SO LONG!
+20210604 01:37:30 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
+20210604 01:37:30 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
+20210604 01:37:30 INFO  [main] controller.Action Action.java39 - ADD: Add an item to an order
+20210604 01:37:30 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
+20210604 01:37:30 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
+20210604 01:37:30 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
