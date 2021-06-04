@@ -7,8 +7,10 @@ import com.qa.ims.controller.Action;
 import com.qa.ims.controller.CrudController;
 import com.qa.ims.controller.CustomerController;
 import com.qa.ims.controller.OrderController;
+import com.qa.ims.controller.OrderProductController;
 import com.qa.ims.persistence.dao.CustomerDAO;
 import com.qa.ims.persistence.dao.OrderDAO;
+import com.qa.ims.persistence.dao.OrderProductDAO;
 import com.qa.ims.persistence.domain.Domain;
 import com.qa.ims.utils.DBUtils;
 import com.qa.ims.utils.Utils;
@@ -19,14 +21,17 @@ public class IMS {
 
 	private final CustomerController customers;
 	private final OrderController orders;
+	private final OrderProductController orderProducts;
 	private final Utils utils;
 
 	public IMS() {
 		this.utils = new Utils();
 		final CustomerDAO custDAO = new CustomerDAO();
 		final OrderDAO orderDAO = new OrderDAO();
+		final OrderProductDAO orderProductDao = new OrderProductDAO();
 		this.customers = new CustomerController(custDAO, utils);
 		this.orders = new OrderController(orderDAO, utils);
+		this.orderProducts = new OrderProductController(orderProductDao, utils);
 	}
 
 	public void imsSystem() {
@@ -59,13 +64,16 @@ public class IMS {
 			case ORDER:
 				active = this.orders;
 				break;
+			case ADD:
+				active = this.orderProducts;
+				break;
 			case STOP:
 				return;
 			default:
 				break;
 			}
 
-			LOGGER.info(() ->"What would you like to do with " + domain.name().toLowerCase() + ":");
+			LOGGER.info(() ->"\nWhat would you like to do with " + domain.name().toLowerCase() + ":");
 
 			Action.printActions();
 			Action action = Action.getAction(utils);
@@ -85,6 +93,9 @@ public class IMS {
 			break;
 		case READ:
 			crudController.readAll();
+			break;
+		case ADD:
+			crudController.create();
 			break;
 		case UPDATE:
 			crudController.update();

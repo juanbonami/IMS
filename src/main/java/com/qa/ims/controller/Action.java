@@ -34,18 +34,18 @@ public enum Action {
 	/**
 	 * Prints out all possible actions
 	 */
-	public static void printActionsForOrder() {
+	public static void printActions() {
 		for (Action action : Action.values()) {
 			LOGGER.info(action.getDescription());
 		}
 	}
 	
-	public static void printActions() {
-		for (Action action : Action.values()) {
-			if (action != Action.ADD)
-			LOGGER.info(action.getDescription());
-		}
-	}
+//	public static void printActions() {
+//		for (Action action : Action.values()) {
+//			if (action != Action.ADD)
+//			LOGGER.info(action.getDescription());
+//		}
+//	}
 
 	/**
 	 * Gets an action based on a users input. If user enters a non-specified
