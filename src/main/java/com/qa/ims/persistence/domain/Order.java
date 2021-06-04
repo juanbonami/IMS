@@ -10,6 +10,10 @@ public class Order {
 		this.setCustomerId(customerId);
 	}
 
+	public Order(long orderId) {
+		this.setOrderId(orderId);
+	}
+
 	public long getOrderId() {
 		return orderId;
 	}

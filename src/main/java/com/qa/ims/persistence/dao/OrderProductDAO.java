@@ -11,30 +11,23 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.qa.ims.persistence.domain.Order;
+import com.qa.ims.persistence.domain.OrderProducts;
 import com.qa.ims.utils.DBUtils;
 
-public class OrderDAO implements Dao<Order> {
+public class OrderProductDAO implements Dao<OrderProducts> {
 	
 	public static final Logger LOGGER = LogManager.getLogger();
-	
-	@Override
-	public Order modelFromResultSet(ResultSet resultSet) throws SQLException {
-		Long orderId = resultSet.getLong("order_id");
-		Long customerId = resultSet.getLong("customer_id");
-		return new Order(orderId, customerId);
-	}
 
 	@Override
-	public List<Order> readAll() {
+	public List<OrderProducts> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders");) {
-			List<Order> orders = new ArrayList<>();
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM order_products");) {
+			List<OrderProducts> orderProducts = new ArrayList<>();
 			while (resultSet.next()) {
-				orders.add(modelFromResultSet(resultSet));
+				orderProducts.add(modelFromResultSet(resultSet));
 			}
-			return orders;
+			return orderProducts;
 		} catch (SQLException e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -43,9 +36,9 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order read(Long id) {
+	public OrderProducts read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("SELECT * FROM orders WHERE order_id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("SELECT * FROM order_products WHERE order_id = ?");) {
 			statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
@@ -59,12 +52,12 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order create(Order order) {
+	public OrderProducts create(OrderProducts orderProducts) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO orders(order_id, customer_id) VALUES (?, ?)");) {
-			statement.setLong(1, order.getOrderId());
-			statement.setLong(2, order.getCustomerId());
+						.prepareStatement("INSERT INTO order_products(order_id, item_id) VALUES (?, ?)");) {
+			statement.setLong(1, orderProducts.getOrderId());
+			statement.setLong(2, orderProducts.getItemId());
 			statement.executeUpdate();
 			//return readLatest();
 		} catch (Exception e) {
@@ -75,14 +68,14 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order update(Order order) {
+	public OrderProducts update(OrderProducts orderProducts) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE orders SET customer_id = ? WHERE order_id = ?");) {
-			statement.setLong(1, order.getCustomerId());
-			statement.setLong(2, order.getOrderId());
+						.prepareStatement("UPDATE order_products SET item_id = ? WHERE order_id = ?");) {
+			statement.setLong(1, orderProducts.getItemId());
+			statement.setLong(2, orderProducts.getOrderId());
 			statement.executeUpdate();
-			return read(order.getOrderId());
+			return read(orderProducts.getOrderId());
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -93,7 +86,7 @@ public class OrderDAO implements Dao<Order> {
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM orders WHERE id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("DELETE FROM order_products WHERE id = ?");) {
 			statement.setLong(1, id);
 			return statement.executeUpdate();
 		} catch (Exception e) {
@@ -101,6 +94,13 @@ public class OrderDAO implements Dao<Order> {
 			LOGGER.error(e.getMessage());
 		}
 		return 0;
+	}
+
+	@Override
+	public OrderProducts modelFromResultSet(ResultSet resultSet) throws SQLException {
+		Long orderId = resultSet.getLong("order_id");
+		Long itemId = resultSet.getLong("item_id");
+		return new OrderProducts(orderId, itemId);
 	}
 
 }
